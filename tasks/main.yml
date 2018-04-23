@@ -14,10 +14,13 @@
   when: arpwatch__enabled|bool
 
 # Manage configuration file [[[1
-- name: Configure Arpwatch
+- name: Create Arpwatch configuration
   template:
     src: '{{ arpwatch__conf_src }}'
     dest: "/etc/arpwatch.conf"
+    owner: root
+    group: root
+    mode: '0644'
   when: arpwatch__enabled|bool
   notify: ['restart arpwatch service']
 
