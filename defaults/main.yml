@@ -63,5 +63,15 @@ arpwatch__conf_src: '../templates/etc/arpwatch.conf.j2'
 arpwatch__conf_username: 'arpwatch'
 
                                                                    # ]]]
+# .. envvar:: arpwatch__conf_args [[[.
+# Arguments to apply to Arpwatch.
+#
+# The value should be a string with all arguments separated by a whitespace.
+# See the manual for more informations.
+# ``-N -p``
+#   Default.
+arpwatch__conf_args: '-N -p'
+
+                                                                   # ]]]
 
                                                                    # ]]]
