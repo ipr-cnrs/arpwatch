@@ -1,0 +1,58 @@
+---
+# .. vim: foldmarker=[[[,]]]:foldmethod=marker
+#
+# ipr-cnrs.arpwatch default variables [[[
+# ======================================
+
+# Packages and installation [[[
+# -----------------------------
+
+# .. envvar:: arpwatch__base_packages [[[
+#
+# List of base packages to install.
+arpwatch__base_packages:
+  - 'arpwatch'
+
+                                                                   # ]]]
+# .. envvar:: arpwatch__enabled [[[
+#
+# Enable or disable support for Arpwatch on a given host. Disabling this
+# option does not remove existing installation and configuration.
+#
+arpwatch__enabled: True
+
+                                                                   # ]]]
+# .. envvar:: arpwatch__service_name [[[
+#
+# The service name to manage.
+arpwatch__service_name: 'arpwatch'
+
+                                                                   # ]]]
+# .. envvar:: arpwatch__service_manage [[[
+#
+# If the arpwatch service should be managed? Possible options:
+#
+# ``True``
+#   Default. The service is started and enabled.
+#
+# ``False``
+#   The service is stopped and disabled from startup.
+arpwatch__service_manage: True
+
+                                                                   # ]]]
+
+                                                                   # ]]]
+
+# Configuration [[[
+# -----------------------------
+
+# .. envvar:: arpwatch__conf_src [[[.
+# Template used to provide configuration file.
+#
+# Must be a relative path from default/ directory of this role or to your
+# ansible inventory directory.
+arpwatch__conf_src: '../templates/etc/arpwatch.conf.j2'
+
+                                                                   # ]]]
+
+                                                                   # ]]]

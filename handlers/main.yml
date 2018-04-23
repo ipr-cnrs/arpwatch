@@ -1,0 +1,10 @@
+---
+# handlers file for arpwatch
+- name: restart arpwatch service
+  service:
+    name: '{{ arpwatch__service_name }}'
+    state: '{{ "restarted" if (arpwatch__enabled | d(True) | bool and
+                            (arpwatch__service_manage | d(True) | bool))
+          else "stopped" }}'
+    enabled: '{{ arpwatch__service_manage | d(True) | bool }}'
+

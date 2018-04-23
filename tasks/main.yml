@@ -1,0 +1,33 @@
+---
+# .. vim: foldmarker=[[[,]]]:foldmethod=marker
+#
+# tasks file for ipr-cnrs.arpwatch
+
+# Manage required system packages [[[1
+- name: Ensure required packages are in there desired state
+  package:
+    name: '{{ item }}'
+    state: 'present'
+    install_recommends: False
+  with_flattened:
+    - '{{ arpwatch__base_packages }}'
+  when: arpwatch__enabled|bool
+
+# Manage configuration file [[[1
+- name: Configure Arpwatch
+  template:
+    src: '{{ arpwatch__conf_src }}'
+    dest: "/etc/arpwatch.conf"
+  when: arpwatch__enabled|bool
+  notify: ['restart arpwatch service']
+
+# Manage service [[[1
+- name: Manage arpwatch service
+  service:
+    name: '{{ arpwatch__service_name }}'
+    state: '{{ "started" if ((arpwatch__enabled | d(True) | bool) and
+                             (arpwatch__service_manage | d(True) | bool))
+          else "stopped" }}'
+    enabled: '{{ ((arpwatch__enabled | d(True) | bool) and
+                  (arpwatch__service_manage | d(True) | bool)) }}'
+
