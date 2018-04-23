@@ -19,6 +19,7 @@ Manage Arpwatch installation and configuration.
 * **arpwatch__service_manage** : If the arpwatch service should be managed [default : `True`].
 * **arpwatch__service_name** : The service name to manage [default : `arpwatch`].
 * **arpwatch__conf_src** : Template used to provide configuration file [default : `../templates/etc/arpwatch.conf.j2`].
+* **arpwatch__conf_username** : Username that should run Arpwatch [default : `arpwatch`].
 
 ## Example Playbook
 
@@ -35,6 +36,7 @@ Manage Arpwatch installation and configuration.
 This role will :
 * Install needed packages to provide `arpwatch` service.
 * Manage `arpwatch` configuration (/etc/arpwatch.conf).
+* Allow to set the user that run Arpwatch.
 * Ensure `arpwatch` service is enabled and started.
 * Ensure to restart `arpwatch` service if configuration changed.
 

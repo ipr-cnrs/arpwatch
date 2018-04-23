@@ -14,6 +14,7 @@
   when: arpwatch__enabled|bool
 
 # Manage configuration file [[[1
+## Manage Arpwatch configuration [[[
 - name: Create Arpwatch configuration
   template:
     src: '{{ arpwatch__conf_src }}'
@@ -23,6 +24,19 @@
     mode: '0644'
   when: arpwatch__enabled|bool
   notify: ['restart arpwatch service']
+                                                                   # ]]]
+## Manage service default [[[
+- name: Manage service default
+  template:
+    src: '../templates/etc/default/arpwatch.j2'
+    dest: "/etc/default/arpwatch"
+    owner: root
+    group: root
+    mode: '0644'
+  when: '{{ ((arpwatch__enabled | bool) and
+             (arpwatch__service_manage | bool)) }}'
+  notify: ['restart arpwatch service']
+                                                                   # ]]]
 
 # Manage service [[[1
 - name: Manage arpwatch service

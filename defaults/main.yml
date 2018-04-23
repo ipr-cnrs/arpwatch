@@ -54,5 +54,14 @@ arpwatch__service_manage: True
 arpwatch__conf_src: '../templates/etc/arpwatch.conf.j2'
 
                                                                    # ]]]
+# .. envvar:: arpwatch__conf_username [[[.
+# Username that should run Arpwatch.
+#
+# The value should be a string with an existing username.
+# ``arpwatch``
+#   Default. Created during installation.
+arpwatch__conf_username: 'arpwatch'
+
+                                                                   # ]]]
 
                                                                    # ]]]
