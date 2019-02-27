@@ -2,6 +2,7 @@
 
 ### Fix
 * Fix E405 Remote package tasks should have a retry.
+* Fix E102 No Jinja2 in when.
 
 ## v1.0.1
 
