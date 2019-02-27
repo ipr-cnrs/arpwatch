@@ -30,7 +30,7 @@
 ## Manage service default [[[
 - name: Manage service default
   template:
-    src: '../templates/etc/default/arpwatch.j2'
+    src: 'etc/default/arpwatch.j2'
     dest: "/etc/default/arpwatch"
     owner: root
     group: root

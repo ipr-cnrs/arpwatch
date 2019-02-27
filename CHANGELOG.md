@@ -3,6 +3,7 @@
 ### Fix
 * Fix E405 Remote package tasks should have a retry.
 * Fix E102 No Jinja2 in when.
+* Fix E404 Doesn't need a relative path in role.
 
 ## v1.0.1
 
