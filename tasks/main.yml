@@ -10,7 +10,7 @@
     state: 'present'
     install_recommends: False
   with_flattened:
-    - '{{ arpwatch__base_packages }}'
+    - '{{ arpwatch__base_packages | to_nice_json }}'
   when: arpwatch__enabled|bool
 
 # Manage configuration file [[[1
@@ -47,4 +47,3 @@
           else "stopped" }}'
     enabled: '{{ ((arpwatch__enabled | d(True) | bool) and
                   (arpwatch__service_manage | d(True) | bool)) }}'
-

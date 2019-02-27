@@ -7,4 +7,3 @@
                             (arpwatch__service_manage | d(True) | bool))
           else "stopped" }}'
     enabled: '{{ arpwatch__service_manage | d(True) | bool }}'
-

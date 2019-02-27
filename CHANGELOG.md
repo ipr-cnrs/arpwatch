@@ -1,9 +1,10 @@
-## v1.X
+## v1.0.1
 
 ### Fix
 * Set empty dependencies line to fix Galaxy warning.
+* Use to_nice_json to manage packages list.
 
-## v1.0
+## v1.0.0
 
 ### Features
 * Install Arpwatch.
