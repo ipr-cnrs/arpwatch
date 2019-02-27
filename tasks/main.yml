@@ -24,7 +24,7 @@
     owner: root
     group: root
     mode: '0644'
-  when: '{{ (arpwatch__enabled|bool) }}'
+  when: arpwatch__enabled|bool
   notify: ['restart arpwatch service']
                                                                    # ]]]
 ## Manage service default [[[
@@ -35,8 +35,8 @@
     owner: root
     group: root
     mode: '0644'
-  when: '{{ ((arpwatch__enabled | bool) and
-             (arpwatch__service_manage | bool)) }}'
+  when: ((arpwatch__enabled | bool) and
+         (arpwatch__service_manage | bool))
   notify: ['restart arpwatch service']
                                                                    # ]]]
 
