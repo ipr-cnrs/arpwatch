@@ -1,3 +1,8 @@
+## v1.0.2
+
+### Fix
+* Fix E405 Remote package tasks should have a retry.
+
 ## v1.0.1
 
 ### Fix

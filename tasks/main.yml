@@ -11,6 +11,8 @@
     install_recommends: False
   with_flattened:
     - '{{ arpwatch__base_packages | to_nice_json }}'
+  register: pkg_result
+  until: pkg_result is success
   when: arpwatch__enabled|bool
 
 # Manage configuration file [[[1
