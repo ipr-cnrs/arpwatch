@@ -46,6 +46,13 @@ arpwatch__service_manage: True
 # Configuration [[[
 # -----------------------------
 
+# .. envvar:: arpwatch__conf_interfaces [[[.
+# List of network interfaces that should have a running arpwatch process.
+#
+# By default, only listen on the main network interface.
+arpwatch__conf_interfaces: [ '{{ ansible_default_ipv4.interface }}' ]
+
+                                                                   # ]]]
 # .. envvar:: arpwatch__conf_src [[[.
 # Template used to provide configuration file.
 #

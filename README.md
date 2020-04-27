@@ -18,6 +18,7 @@ Manage Arpwatch installation and configuration.
 * **arpwatch__enabled** : Enable or disable support for Arpwatch on a given host [default : `True`].
 * **arpwatch__service_manage** : If the arpwatch service should be managed [default : `True`].
 * **arpwatch__service_name** : The service name to manage [default : `arpwatch`].
+* **arpwatch__conf_interfaces** : List of network interfaces where arpwatch should listen [default : `[ '{{ ansible_default_ipv4.interface }}' ]`].
 * **arpwatch__conf_src** : Template used to provide configuration file [default : `../templates/etc/arpwatch.conf.j2`].
 * **arpwatch__conf_username** : Username that should run Arpwatch [default : `arpwatch`].
 * **arpwatch__conf_args** : Arguments to apply to Arpwatch [default : `-N -p`].
@@ -39,7 +40,7 @@ This role will :
 * Manage `arpwatch` configuration (/etc/arpwatch.conf).
 * Allow to set the user that run Arpwatch.
 * Allow to set arguments to pass Arpwatch service.
-* Ensure `arpwatch` service is enabled and started.
+* Ensure to start an `arpwatch` process for the main network interface at least.
 * Ensure to restart `arpwatch` service if configuration changed.
 
 ## Development

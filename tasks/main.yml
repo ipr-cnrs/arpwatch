@@ -41,11 +41,13 @@
                                                                    # ]]]
 
 # Manage service [[[1
-- name: Manage arpwatch service
+- name: Manage arpwatch service by network interface
   service:
-    name: '{{ arpwatch__service_name }}'
+    name: '{{ arpwatch__service_name }}@{{ item }}'
     state: '{{ "started" if ((arpwatch__enabled | d(True) | bool) and
                              (arpwatch__service_manage | d(True) | bool))
           else "stopped" }}'
     enabled: '{{ ((arpwatch__enabled | d(True) | bool) and
                   (arpwatch__service_manage | d(True) | bool)) }}'
+  with_items:
+    - '{{ arpwatch__conf_interfaces }}'

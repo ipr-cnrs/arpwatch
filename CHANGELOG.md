@@ -1,3 +1,9 @@
+## v2.X.Y
+
+### Features
+
+* Adapt for Debian Buster (start with arpwatch version 2.1a15-7)
+
 ## v1.0.2
 
 ### Fix
