@@ -1,8 +1,8 @@
-## v2.X.Y
+## v2.0.0
 
 ### Features
-* Adapt for Debian Buster (start with arpwatch version 2.1a15-7)
-* Drop Debian Stretch support. Stay in v1.* to be able to manage Arpwatch on Debian Stretch
+* Adapt for Debian Buster (starts with Arpwatch version 2.1a15-7).
+* Drop Debian Stretch support. Stay in v1.* to be able to manage Arpwatch on Debian Stretch.
 
 ### Fix
 * Arpwatch doesn't support configuration file. Remove /etc/arpwatch.conf
