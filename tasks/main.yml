@@ -15,19 +15,7 @@
   until: pkg_result is success
   when: arpwatch__enabled|bool
 
-# Manage configuration file [[[1
-## Manage Arpwatch configuration [[[
-- name: Create Arpwatch configuration
-  template:
-    src: '{{ arpwatch__conf_src }}'
-    dest: "/etc/arpwatch.conf"
-    owner: root
-    group: root
-    mode: '0644'
-  when: arpwatch__enabled|bool
-  notify: ['restart arpwatch service']
-                                                                   # ]]]
-## Manage service default [[[
+# Manage service default [[[1
 - name: Manage service default
   template:
     src: 'etc/default/arpwatch.j2'
@@ -38,7 +26,6 @@
   when: ((arpwatch__enabled | bool) and
          (arpwatch__service_manage | bool))
   notify: ['restart arpwatch service']
-                                                                   # ]]]
 
 # Manage service [[[1
 - name: Manage arpwatch service by network interface
