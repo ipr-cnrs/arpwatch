@@ -5,7 +5,7 @@
 
 # Manage required system packages [[[1
 - name: Ensure required packages are in there desired state
-  package:
+  ansible.builtin.package:
     name: '{{ arpwatch__base_packages | flatten }}'
     state: 'present'
     install_recommends: False
@@ -15,7 +15,7 @@
 
 # Manage service default [[[1
 - name: Manage service default
-  template:
+  ansible.builtin.template:
     src: 'etc/default/arpwatch.j2'
     dest: "/etc/default/arpwatch"
     owner: root
@@ -27,7 +27,7 @@
 
 # Manage service [[[1
 - name: Manage arpwatch service by network interface
-  service:
+  ansible.builtin.service:
     name: '{{ arpwatch__service_name }}@{{ item }}'
     state: '{{ "started" if ((arpwatch__enabled | d(True) | bool) and
                              (arpwatch__service_manage | d(True) | bool))
