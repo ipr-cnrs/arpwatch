@@ -1,3 +1,8 @@
+## v2.0.1
+
+### Fix
+* Use flatten to manage packages list.
+
 ## v2.0.0
 
 ### Features
