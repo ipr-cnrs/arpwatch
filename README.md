@@ -62,7 +62,7 @@ Jérémy Gardais
 * [IPR][ipr website] (Institut de Physique de Rennes)
 
 [gogs to github hook]: https://stackoverflow.com/a/21998477
-[arpwatch source]: https://git.ipr.univ-rennes1.fr/cellinfo/ansible.arpwatch
+[arpwatch source]: https://git.ipr.univ-rennes.fr/cellinfo/ansible.arpwatch
 [arpwatch github]: https://github.com/ipr-cnrs/arpwatch
 [wtfpl website]: http://www.wtfpl.net/about/
 [ipr website]: https://ipr.univ-rennes1.fr/
